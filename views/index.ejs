@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <script src="/js/menu.js" defer></script>
+    <title>Dev-Boy Profile | Andre Gonzales</title>
+    <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">
+
+</head>
+<body onload="mobileCheck()">
+    <header>
+        <audio id="menuSelect">
+            <source src="/audio/01_Coin_Pickup_v1.wav" type="audio/wav">
+        </audio>
+        <audio id="menuMove">
+            <source src="/audio/01_Hurt_v2.wav" type="audio/wav">
+        </audio>
+    </header>
+    <main>
+        <div id="controls">
+            <h1>Welcome!</h1>
+            <h2>How to Use DevBoy</h2>
+            <hr>
+            <p>Click on D-Pad, A and B buttons with mouse.</p>
+            <p>Or</p>
+            <div class="wasd-grid">
+                <div class="empty"></div>
+                <div id="w">W</div>
+                <div class="empty"></div>
+                <div class="empty"></div>
+                <div id="enter">enter</div>
+                <div id="a">a</div>
+                <div id="s">s</div>
+                <div id="d">d</div>
+                <div id="shift">shift</div>
+            </div>
+            <p>Hold Ctrl + Q to pop this back up</p>
+        </div>
+        
+        <div id="wrapper">
+            <div id="outer-shell">
+                <div id="gameboy-template">
+                    <img src="/img/template.jpg" alt="">
+                </div>
+                <div id="mobile-controls">
+                    <h1>Welcome!</h1>
+                    <h2>How to Use DevBoy</h2>
+                    <p>Touch D-Pad to move, A and B buttons to select.</p>
+                </div>
+                <div id="top-half">
+                    <div id="screen">
+                        <div id="screen-title">
+                            Andre G
+                        </div>
+                        <nav>
+                            <ul>
+                                <li class="check"><a class="selected" href="#">Home</a></li>
+                                <li><a class="not-selected" href="#">Projects</a></li>
+                                <li><a class="not-selected" href="#">About</a></li>
+                                <li><a class="not-selected" href="#">Contact</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+                <div id="bottom-half">
+                    <div id="whatsthis">
+                        <span id="first">0</span><span id="second">0</span>0
+                    </div>
+                    <div id="left-console">
+                        <div id="d-pad">
+                            <div id="up"></div>
+                            <div id="right"></div>
+                            <div id="down"></div>
+                            <div id="left"></div>
+                        </div>
+                    </div>
+                    <div id="right-console">
+                        <div id="button-container">
+                            <div id="a-button"></div>
+                            <div id="a-label">A</div>
+                            <div id="b-button"></div>
+                            <div id="b-label">B</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="right-display">
+                <div id="home" tabindex="0">
+                    <%- include("./partials/_home.ejs") %>
+                </div>
+                <div id="projects" tabindex="0">
+                    <%- include("./partials/_projects.ejs") %>
+                </div>
+                <div id="about" tabindex="0">
+                    <%- include("./partials/_about.ejs") %>
+                </div>
+                <div id="contact" tabindex="0">
+                    <%- include("./partials/_contact.ejs") %>
+                </div>
+                <div id="loader">
+                    <%- include("./partials/_loading.ejs") %>
+                </div>
+                <div id="secret" tabindex="0">
+                    <%- include("./partials/_secret.ejs") %>
+                </div>
+            </div>
+        </div>
+        <div id="mobile-nav"><img src="/img/down-down.svg" alt="down arrow"></div>
+    </main>
+    <footer>
+        <div id="instructions">Instructions</div>
+        <div id="created">
+            <p>Created By Andre</p>
+            <h5><a href="mailto:andre@knucklecuts.com">Andre@knucklecuts.com</a></h5>
+        </div>
+    </footer>
+</body>
+</html>

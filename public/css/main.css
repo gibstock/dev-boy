@@ -1,0 +1,396 @@
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: hsl(0, 3%, 0%);
+    font-family: 'Press Start 2P', cursive;
+
+}
+main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+ul li {
+    list-style: none;
+    margin-top: .5em;
+}
+ul li a {
+    cursor: default;
+}
+#wrapper {
+    width: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2em;
+    margin-top: 2rem;
+}
+#right-display {
+    width: calc(100% - 250px);
+    height: 400px;
+    border: 1px solid black;
+    background-color: hsl(137, 16%, 51%);
+    border-radius: 12px;
+    padding: 1em;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    line-height: 1.5rem;
+
+}
+#right-display::-webkit-scrollbar {
+    width: 1em;
+}
+#right-display::-webkit-scrollbar-track {
+    background: hsl(137, 16%, 51%);
+    border-radius: 12px;
+}
+#right-display::-webkit-scrollbar-thumb {
+    background: hsl(135, 17%, 35%);
+    border-radius: 12px;
+}
+#right-display::-webkit-scrollbar-thumb:hover {
+    background: hsl(135, 50%, 20%);
+}
+#outer-shell {
+    background-color: rgb(174, 174, 174);
+    height: 400px;
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+    position: relative;
+}
+/* FOR DESIGN ONLY  */
+#gameboy-template {
+    display: none;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    bottom: -100px;
+    right: 20px;
+    z-index: 1;
+}
+#gamboy-template:hover {
+    display: none;
+}
+#gameboy-template img {
+    transform: scale(2.5);
+}
+#top-half {
+    background-color: rgb(114, 160, 120);
+    width: 13rem;
+    height: 11rem;
+    box-shadow: inset 0 0 15px 5px white;
+    border-radius: 10px;
+    
+}
+#bottom-half {
+    background-color: rgb(174, 174, 174);
+    width: 13rem;
+    height: 12rem;
+    display: flex;
+    flex-direction: row;
+    position: relative;
+
+}
+#left-console {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#right-console {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#d-pad {
+    background-color: rgb(50, 50, 50);
+    width: 4rem;
+    height: 4rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    justify-content: center;
+    align-items: center;
+    clip-path: polygon(0 33%, 33% 33%, 33% 0, 66% 0, 66% 33%, 100% 33%, 100% 66%, 66% 66%, 66% 100%, 33% 100%, 33% 66%, 0 66% );
+    filter: drop-shadow(2px 2px 5px black);
+}
+#button-container {
+    background-color: darkgray;
+    width: 5rem;
+    height: 4rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+}
+#a-button, #b-button {
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: whitesmoke;
+}
+#b-button {
+    background-color: rgb(146, 33, 89);
+    width: 2rem;
+    height: 2rem;
+    grid-row: 2/3;
+    justify-self: center;
+    align-self: center;
+    cursor: pointer;
+}
+#a-button {
+    background-color: rgb(146, 33, 89);
+    width: 2rem;
+    height: 2rem;
+    grid-column: 2/3;
+    justify-self: center;
+    align-self: center;
+    cursor: pointer;
+}
+#a-label {
+    grid-column: 2/3;
+    grid-row: 2/3;
+    text-align: center;
+
+    
+}
+#b-label {
+    grid-row: 3/4;
+    grid-column: 1/2;
+    text-align: center;
+
+}
+#up, #right, #down, #left {
+    background-color: rgb(222, 231, 235);
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    box-shadow: inset 0 0 5px 5px black;
+
+}
+#up {
+    grid-column: 2/3;
+    cursor: pointer;
+}
+#right {
+    grid-column: 3/4;
+    grid-row: 2/3;
+    cursor: pointer;
+}
+#down {
+    grid-column: 2/3;
+    grid-row: 3/4;
+    cursor: pointer;
+
+}
+#left {
+    grid-column: 1/2;
+    grid-row: 2/3;
+    cursor: pointer;
+}
+#screen-title {
+    text-align: center;
+    margin-top: 1rem;
+}
+.check {
+    list-style: url('../img/cross.png');
+}
+.selected {
+    color: hsl(135, 50%, 20%);
+    text-decoration: underline;
+}
+.not-selected {
+    color: hsl(135, 17%, 35%);
+    text-decoration: none;
+}
+#home{
+    display: none;
+    flex-direction: column;
+    
+}
+#home img {
+    width: 100%;
+    max-width: 150px;
+    filter: saturate(10%) sepia(50%);
+    align-self: center;
+}
+#projects{
+    display: none;
+}
+#projects img {
+    max-width: 100%;
+    filter: saturate(10%) sepia(50%);
+}
+
+#about{
+    display: none;
+}
+#contact{
+    display: none;
+}
+#secret {
+    display: none;
+}
+#home:focus, #projects:focus, #about:focus, #contact:focus, #secret:focus {
+    outline: none;
+}
+#whatsthis {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+#loader {
+    display: none;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+.loading {
+    display: none;
+}
+.loaded {
+    display: flex;
+}
+
+footer {
+    display: flex;
+    width: 70%;
+    justify-content: space-between;
+    align-items: center;
+    color: hsl(135, 17%, 75%);
+    margin: 0 auto;
+}
+#created {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+}
+#mobile-nav {
+    display: none;
+}
+#controls {
+    position: absolute;
+    display: none;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 1em;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: hsl(135, 50%, 90%);
+    z-index: 99;
+    border-radius: 12px;
+}
+
+table {
+    font-size: 1em;
+}
+#compare tbody tr td{
+    border: 3px dotted black;
+}
+.wasd-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 1em;
+}
+#w, #a, #s, #d, #enter, #shift {
+    background-color: hsl(203, 51%, 84%);
+    padding: .5em;
+    text-align: center;
+    border-radius: 8px;
+}
+#enter {
+    grid-column: 6/8;
+    grid-row: 1/2;
+}
+#d {
+    grid-column: 3/4;
+    grid-row: 2/3;
+}
+#s {
+    grid-row: 2/3;
+    grid-column: 2/3;
+}
+#a {
+    grid-column: 0/1;
+    grid-row: 2/3;
+}
+#shift {
+    grid-row: 2/3;
+    grid-column: 5/8;
+    text-align: right;
+}
+#instructions {
+    cursor: pointer;
+    text-decoration: underline;
+}
+#mobile-controls {
+    display: none;
+}
+
+@media only screen and (max-width: 768px){
+    #wrapper {
+        flex-direction: column;
+    }
+    #outer-shell {
+        margin-bottom: 3em;
+        order: 2;
+    }
+    #right-display {
+        width: 100%;
+    }
+    footer {
+        flex-direction: column;
+        width: 100%;
+    }
+    #mobile-nav {
+        position: fixed;
+        display: flex;
+        width: 10vw;
+        height: 10vw;
+        left: 0;
+        border-radius: 50%;
+        background-color: hsl(135, 50%, 90%);
+        cursor: pointer;
+        transition: 0s background-color;
+    }
+    
+    #mobile-nav:hover, #mobile-nav:active {
+        background-color: hsl(135, 30%, 40%);
+        transition-delay: 1s ;
+    }
+    #mobile-controls {
+        position: absolute;
+        display: none;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        padding: 1em;
+        bottom: 0;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: hsl(135, 50%, 90%);
+        z-index: 99;
+        border-radius: 12px;
+        
+    }
+    figure {
+        margin: 0;
+    }
+    #created {
+        flex-direction: column;
+    }
+}
